@@ -1,0 +1,13 @@
+This project aims at supplying ready-to-use binaries for debugging Linux systems on multiple architectures, on ARM in particular.
+
+Static binaries are useful because they can be "dropped" in a filesystem and are immediately usable because they are completely self-sufficient. They should work whatever the libraries installed in the system are.
+
+Such binaries are mainly useful to debug embedded Linux filesystems. You don't need to use a development version of the filesystem containing more libraries, executables and headers. For example, if you have a bug in an application, just drop the "strace" utility, and run it to trace the system calls run by the application. Once your investigations are over, you can just remove the binary, and the system is identical to what it was before.
+
+In particular, you can use the binaries for debugging Android systems, which have their own C library, with which the standard utilities could be difficult to compile.
+
+Some binaries can also be useful for making last-minute demos, adding a utility to a filesystem without requiring any further change. This is just a quick and dirty approach of course, as compiling the utility with your standard build system is much better in terms of size, reproducibility and ability to update to newer versions.
+
+Such binaries are not intended for use in production devices, and are provided without any warranty (according to the terms of their original licenses).
+
+Questions, bug reports or any suggestion to add a useful utility are welcome.
